@@ -8,31 +8,27 @@
 body {
     margin: 0;
     font-family: Tahoma, Arial, sans-serif;
-
     background-color: #3EA3FF;
     background-image: url("https://ovgorskiy.ru/images/BackGr3.jpg");
     background-repeat: repeat;
     background-size: 25% auto;
 }
 
-/* верх */
+/* header */
 .header {
     height: 70px;
     background-image: url("https://ovgorskiy.ru/images/BackGr1.jpg");
     background-size: cover;
-    background-position: top;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: white;
     font-size: 30px;
     font-weight: bold;
     text-shadow: 1px 1px 2px #000;
 }
 
-/* меню */
+/* nav */
 .nav {
     text-align: center;
     padding: 8px;
@@ -56,57 +52,43 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     gap: 20px;
+    margin-top: 20px;
+    align-items: flex-start;
 }
 
-.main {
-    width: 700px;
-}
+.left { width: 220px; }
+.main { width: 700px; }
+.right { width: 250px; }
 
-.sidebar {
-    width: 250px;
-}
-
-/* БЛОКИ ИНФОРМАЦИИ */
+/* blocks */
 .block {
     border: 2px solid #69B3E7;
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 15px;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.9);
 }
 
-/* заголовок */
 .block h3 {
     margin: 0;
     padding: 8px 12px;
-
     font-size: 14px;
-    font-weight: bold;
-    color: #000;
-
     background: linear-gradient(#8fd0ff, #69B3E7);
     border-bottom: 1px solid #5aa2d6;
-
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
-/* контент */
 .block-content {
     padding: 12px;
     font-size: 13px;
     line-height: 1.5;
-    background: transparent;
 }
 
-/* iframe */
 .stats iframe {
     width: 100%;
     border: none;
 }
 
-/* картинка */
 .block img {
     display: block;
     margin: 0 auto;
@@ -114,73 +96,113 @@ body {
 </style>
 
 </head>
+
 <body>
 
 <div class="header">CubeVanilla</div>
 
 <div class="nav">
     <a href="#">Главная</a>
-    <a href="news.html">Новости</a>
-    <a href="donate.html">Донат</a>
-    <a href="faq.html">FAQ</a>
+    <a href="#">Новости</a>
+    <a href="#">Донат</a>
+    <a href="#">FAQ</a>
 </div>
 
 <div class="container">
 
-    <div class="main">
-
-        <div class="block">
-            <h3>О сервере</h3>
-            <div class="block-content">
-CubeVanilla — анархический Minecraft сервер без приватов и ограничений. Здесь каждый игрок сам решает, как выживать: строить, разрушать, объединяться или играть в одиночку.
-
-Мы стараемся сохранить ванильный опыт без лишних модификаций, но при этом обеспечиваем стабильную работу сервера.
-
-Если тебе нужен настоящий хаос без правил — ты по адресу.
-            </div>
+<!-- ЛЕВО -->
+<div class="left">
+    <div class="block">
+        <h3>Онлайн</h3>
+        <div class="block-content">
+            <div id="server-status">Загрузка...</div>
+            <div id="player-list" style="margin-top:10px;"></div>
         </div>
+    </div>
+</div>
 
-        <div class="block stats">
-            <h3>Статистика</h3>
-            <div class="block-content">
-                <iframe 
-                    src="https://minecraftrating.ru/server_chart/276158/" 
-                    height="300">
-                </iframe>
-            </div>
+<!-- ЦЕНТР -->
+<div class="main">
+
+    <div class="block">
+        <h3>О сервере</h3>
+        <div class="block-content">
+CubeVanilla — анархический Minecraft сервер без приватов и ограничений. Здесь каждый игрок сам решает, как выживать: строить, разрушать, объединяться или играть в одиночку. Мы стараемся сохранить ванильный опыт без лишних модификаций, но при этом обеспечиваем стабильную работу сервера. Если тебе нужен настоящий хаос без правил — ты по адресу.
         </div>
-
     </div>
 
-    <div class="sidebar">
-
-        <div class="block">
-            <h3>Информация</h3>
-            <div class="block-content">
-                IP: cubevanilla.ru<br>
-                Версия: 1.14 – 1.21.8
-            </div>
+    <div class="block stats">
+        <h3>Статистика</h3>
+        <div class="block-content">
+            <iframe src="https://minecraftrating.ru/server_chart/276158/" height="300"></iframe>
         </div>
-
-        <div class="block">
-            <h3>Поддержка</h3>
-            <div class="block-content">
-                Email: support@cubevanilla.ru
-            </div>
-        </div>
-
-        <div class="block">
-            <h3>Visitors</h3>
-            <div class="block-content" style="text-align:center;">
-                <a href="https://info.flagcounter.com/Y6t2">
-                    <img src="https://s01.flagcounter.com/count/Y6t2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/">
-                </a>
-            </div>
-        </div>
-
     </div>
 
 </div>
+
+<!-- ПРАВО -->
+<div class="right">
+
+    <div class="block">
+        <h3>Информация</h3>
+        <div class="block-content">
+            IP: cubevanilla.ru<br>
+            Версия: 1.14 – 1.21.8
+        </div>
+    </div>
+
+    <div class="block">
+        <h3>Поддержка</h3>
+        <div class="block-content">
+            Email: support@cubevanilla.ru
+        </div>
+    </div>
+
+    <div class="block">
+        <h3>Visitors</h3>
+        <div class="block-content" style="text-align:center;">
+            <a href="https://info.flagcounter.com/Y6t2">
+                <img src="https://s01.flagcounter.com/count/Y6t2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/">
+            </a>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+fetch("https://api.mcsrvstat.us/3/5.83.140.251:25702")
+.then(res => res.json())
+.then(data => {
+    const status = document.getElementById("server-status");
+    const list = document.getElementById("player-list");
+
+    if (!data.online) {
+        status.innerHTML = "<b style='color:red;'>Сервер оффлайн</b>";
+        list.innerHTML = "";
+        return;
+    }
+
+    status.innerHTML =
+        "Онлайн: <b>" + data.players.online + "/" + data.players.max + "</b><br>" +
+        "Версия: " + data.version;
+
+    if (data.players.list && data.players.list.length > 0) {
+        let html = "<b>Игроки:</b><br>";
+        data.players.list.forEach(p => {
+            html += "• " + p.name + "<br>";
+        });
+        list.innerHTML = html;
+    } else {
+        list.innerHTML = "Игроков нет";
+    }
+})
+.catch(() => {
+    document.getElementById("server-status").innerHTML =
+        "<b style='color:red;'>Ошибка API</b>";
+});
+</script>
 
 </body>
 </html>
