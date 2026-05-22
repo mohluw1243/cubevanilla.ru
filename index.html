@@ -7,7 +7,7 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Tahoma, Arial, sans-serif;
 
     background-color: #3EA3FF;
     background-image: url("https://ovgorskiy.ru/images/BackGr3.jpg");
@@ -27,24 +27,29 @@ body {
     justify-content: center;
 
     color: white;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
 }
 
 /* меню */
 .nav {
     text-align: center;
-    padding: 10px;
-    background: #3c7edb;
+    padding: 8px;
+    background: #2f6fc2;
+    border-bottom: 2px solid #1e4e8c;
 }
 
 .nav a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
-    padding: 6px 12px;
+    margin: 0 8px;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.nav a:hover {
     background: rgba(255,255,255,0.2);
-    border-radius: 5px;
 }
 
 /* layout */
@@ -55,47 +60,56 @@ body {
     gap: 20px;
 }
 
-/* левая */
 .main {
     width: 700px;
 }
 
-/* правая */
 .sidebar {
     width: 250px;
 }
 
-/* ВСЕ блоки теперь как visitors */
+/* БЛОКИ ИНФОРМАЦИИ */
 .block {
-    background: linear-gradient(#e8f0f8, #cfdceb);
-    border: 1px solid #8aa6c1;
-    border-radius: 10px;
-    padding: 12px;
-    margin-bottom: 20px;
-    box-shadow: inset 0 1px 0 #ffffff;
-    font-size: 14px;
+    border: 2px solid #69B3E7;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.85);
 }
 
-/* заголовки */
+/* заголовок */
 .block h3 {
-    text-align: center;
-    margin: 5px 0 10px 0;
-    font-size: 18px;
-    color: #000;
+    margin: 0;
+    padding: 8px 12px;
+
+    font-size: 14px;
     font-weight: bold;
+    color: #000;
+
+    background: linear-gradient(#8fd0ff, #69B3E7);
+    border-bottom: 1px solid #5aa2d6;
+
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* контент */
+.block-content {
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    background: transparent;
 }
 
 /* iframe */
 .stats iframe {
     width: 100%;
-    border-radius: 6px;
+    border: none;
 }
 
-/* картинка счётчика */
+/* картинка */
 .block img {
     display: block;
     margin: 0 auto;
-    border-radius: 4px;
 }
 </style>
 
@@ -113,55 +127,52 @@ body {
 
 <div class="container">
 
-    <!-- ЛЕВО -->
     <div class="main">
 
         <div class="block">
             <h3>О сервере</h3>
-            <p>
-            CubeVanilla — анархический Minecraft сервер без приватов и ограничений.
-            Здесь каждый игрок сам решает, как выживать.
-            </p>
-
-            <p>
-            Ванильный опыт, стабильность и немного хаоса.
-            </p>
-
-            <p>
-            Хочешь без правил — ты по адресу.
-            </p>
+            <div class="block-content">
+                CubeVanilla — анархический Minecraft сервер без приватов и ограничений.
+                Каждый игрок сам решает, как выживать.
+            </div>
         </div>
 
         <div class="block stats">
             <h3>Статистика</h3>
-            <iframe 
-                src="https://minecraftrating.ru/server_chart/276158/" 
-                height="300" 
-                frameborder="0">
-            </iframe>
+            <div class="block-content">
+                <iframe 
+                    src="https://minecraftrating.ru/server_chart/276158/" 
+                    height="300">
+                </iframe>
+            </div>
         </div>
 
     </div>
 
-    <!-- ПРАВО -->
     <div class="sidebar">
 
         <div class="block">
             <h3>Информация</h3>
-            <p>IP: cubevanilla.ru</p>
-            <p>Версия: 1.14 – 1.21.8</p>
+            <div class="block-content">
+                IP: cubevanilla.ru<br>
+                Версия: 1.14 – 1.21.8
+            </div>
         </div>
 
         <div class="block">
             <h3>Поддержка</h3>
-            <p>Email: support@cubevanilla.ru</p>
+            <div class="block-content">
+                Email: support@cubevanilla.ru
+            </div>
         </div>
 
         <div class="block">
             <h3>Visitors</h3>
-            <a href="https://info.flagcounter.com/Y6t2">
-                <img src="https://s01.flagcounter.com/count/Y6t2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/">
-            </a>
+            <div class="block-content" style="text-align:center;">
+                <a href="https://info.flagcounter.com/Y6t2">
+                    <img src="https://s01.flagcounter.com/count/Y6t2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/">
+                </a>
+            </div>
         </div>
 
     </div>
